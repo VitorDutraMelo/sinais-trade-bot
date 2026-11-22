@@ -20,6 +20,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Baixar codigo
         uses: actions/checkout@v6
@@ -52,5 +53,3 @@ jobs:
       - name: Publicar painel
         id: deployment
         uses: actions/deploy-pages@v4
-
-
