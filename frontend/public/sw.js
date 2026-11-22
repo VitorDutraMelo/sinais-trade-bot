@@ -1,4 +1,4 @@
-const CACHE = 'sinaistredbot-pwa-v1';
+const CACHE = 'sinaistredbot-pwa-v3';
 
 self.addEventListener('install', () => self.skipWaiting());
 

@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 import csv, os, time, uuid
 from collections import deque
 from datetime import datetime, timezone
@@ -38,7 +38,7 @@ class Monitor(BaseModel):
 app = FastAPI(title="SinaisTredBot Local")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5173", "http://localhost:5173"],
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
