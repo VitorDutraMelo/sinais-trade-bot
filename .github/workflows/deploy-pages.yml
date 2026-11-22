@@ -1,4 +1,4 @@
-name: Publicar painel no GitHub Pages
+﻿name: Publicar painel no GitHub Pages
 
 on:
   push:
@@ -50,3 +50,4 @@ jobs:
       - name: Publicar painel
         id: deployment
         uses: actions/deploy-pages@v4
+
