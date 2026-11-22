@@ -37,6 +37,8 @@ jobs:
 
       - name: Gerar painel
         working-directory: frontend
+        env:
+          VITE_API_URL: https://sinais-trade-bot.onrender.com
         run: npm run build
 
       - name: Preparar GitHub Pages
@@ -50,4 +52,5 @@ jobs:
       - name: Publicar painel
         id: deployment
         uses: actions/deploy-pages@v4
+
 
