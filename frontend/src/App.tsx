@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Activity, Bell, Clock3, FlaskConical, History, Settings, Wifi } from "lucide-react";
 
 type Signal = {
@@ -11,7 +11,7 @@ type Status = {
   timeframe_min: number; signals_today: number; last_signal: Signal | null;
 };
 
-const API = "http://127.0.0.1:8000";
+const API = (import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000').replace(/\/$/, '');
 const hora = (v?: string) => v ? new Date(v).toLocaleTimeString("pt-BR", {hour:"2-digit",minute:"2-digit"}) : "—";
 const preco = (v: number) => v.toFixed(v > 100 ? 3 : 5);
 
@@ -51,7 +51,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const ws = new WebSocket("ws://127.0.0.1:8000/ws");
+    const ws = new WebSocket(`${API.replace(/^http/, 'ws')}/ws`);
     ws.onmessage = (evento) => {
       const mensagem = JSON.parse(evento.data);
       if (mensagem.type === "signal") {
