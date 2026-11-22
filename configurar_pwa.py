@@ -99,7 +99,7 @@ self.addEventListener('fetch', (event) => {
 main = frontend / "src" / "main.tsx"
 main_text = main.read_text(encoding="utf-8-sig")
 if "import './pwa'" not in main_text:
-    main.write_text("import './pwa'\\n" + main_text, encoding="utf-8")
+    main.write_text("import './pwa'\n" + main_text, encoding="utf-8")
 
 index = frontend / "index.html"
 index_text = index.read_text(encoding="utf-8-sig")
@@ -186,3 +186,4 @@ make_icon(192, icons / "icon-192.png")
 make_icon(512, icons / "icon-512.png")
 
 print("PWA criado com sucesso.")
+
