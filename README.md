@@ -1,0 +1,2 @@
+# sinais-trade-bot
+
